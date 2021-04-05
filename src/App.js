@@ -1,6 +1,8 @@
 import { Switch, Route } from "react-router-dom";
 
-import HomePage from "./components/pages/homepage/homepage.component";
+import HomePage from "./pages/homepage/homepage.component";
+import ShopPage from "./pages/shop/shop.component";
+import Header from "./components/header/header.component";
 
 const HatsPage = (props) => {
   return (
@@ -10,26 +12,15 @@ const HatsPage = (props) => {
   );
 };
 
-const JacketsPage = (props) => {
-  console.log(props);
-  return (
-    <div>
-      <h1>JACKETS PAGE</h1>
-    </div>
-  );
-};
-
 function App() {
   return (
     <div>
-      {/* <Switch> */}
+      <Header />
+      <Switch>
+        <Route path='/shop/hats' component={HatsPage} />
+        <Route exact path='/shop' component={ShopPage} />
         <Route exact path='/' component={HomePage} />
-        <Route exact path='/shop/hats' component={HatsPage} />
-        <Route exact path='/shop/jackets' component={JacketsPage} />
-        <Route exact path='/shop/sneakers' component={HatsPage} />
-        <Route exact path='/shop/womens' component={HatsPage} />
-        <Route exact path='/shop/mens' component={HatsPage} />
-      {/* </Switch> */}
+      </Switch>
     </div>
   );
 }
