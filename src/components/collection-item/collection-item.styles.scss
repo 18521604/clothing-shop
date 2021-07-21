@@ -11,7 +11,18 @@
         background-size: cover;
         background-position: center;
         margin-bottom: 1em;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        .custom-button{
+            width: 80%;
+            position: absolute;
+            bottom: 1.5em;
+            display: none;
+        }
     }
+
     .collection-footer{
         height: 5%;
         width: 100%;
@@ -20,12 +31,22 @@
         align-items: center;
         font-size: 1.8em;
 
-
         .name{
             width: 90%;
         }
         .price{
             width: 10%;
+        }
+    }
+
+    &:hover{
+        .image{
+            opacity: 0.8;
+        }
+
+        .custom-button{
+            display: flex;
+            opacity: 0.85;
         }
     }
 }
