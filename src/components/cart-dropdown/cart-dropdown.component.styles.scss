@@ -16,6 +16,11 @@
         display: flex;
         flex-direction: column;
         overflow: auto;
+
+        .empty-message{
+            font-size: 1.8em;
+            margin: 5em auto;
+        }
     }
 
     button{
