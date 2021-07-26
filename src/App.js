@@ -13,14 +13,6 @@ import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up
 import Header from "./components/header/header.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
 
-const HatsPage = (props) => {
-  return (
-    <div>
-      <h1>HATS PAGE</h1>
-    </div>
-  );
-};
-
 class App extends Component {
   unsubscribeFromAuth = null;
 
@@ -51,7 +43,6 @@ class App extends Component {
       <div>
         <Header />
         <Switch>
-          <Route path='/shop/hats' component={HatsPage} />
           <Route path='/shop' component={ShopPage} />
           <Route exact path='/checkout' component={CheckoutPage} />
           <Route
