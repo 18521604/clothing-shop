@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import { createStructuredSelector } from "reselect";
 
-import { auth } from "../../firebase/firebase.utils";
-
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
+import { signOut } from "../../redux/user/user.actions";
 
 // Special syntax when use SVG file
 import { ReactComponent as Logo } from "../../assets/4.4 crown.svg.svg";
 
 import "./header.styles.scss";
 
-const Header = ({ currentUser, hidden }) => (
+const Header = ({ currentUser, hidden, signOut }) => (
     <div className='header'>
         <Link className='logo-container' to='/'>
             <Logo className='logo' />
@@ -25,7 +25,7 @@ const Header = ({ currentUser, hidden }) => (
             <Link className='option' to='/shop'>CONTACT</Link>
             {
                 currentUser ?
-                    <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>
+                    <div className='option' onClick={signOut}>SIGN OUT</div>
                     :
                     <Link className='option' to='/signin'>SIGN IN</Link>
             }
@@ -43,4 +43,8 @@ const mapStateToProps = createStructuredSelector({
     hidden: selectCartHidden
 })
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = dispatch => ({
+    signOut: () => dispatch(signOut())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
