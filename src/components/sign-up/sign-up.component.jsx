@@ -24,7 +24,7 @@ const SignUp = ({ signUpAndSignInAfterSignUp }) => {
             alert('passwords not match');
             return;
         }
-        signUpAndSignInAfterSignUp({email,password,displayName});
+        signUpAndSignInAfterSignUp({ email, password, displayName });
     }
 
     const handleChange = event => {
