@@ -15,10 +15,11 @@
     justify-content: center;
     align-items: center;
 
-    &:hover{
+    &:hover {
         background-color: white;
         color: black;
         border: 0.1em solid black;
+        transition: ease-in-out 0.3s;
     }
 
     &.google-sign-in {
@@ -31,12 +32,12 @@
         }
     }
 
-    &.inverted{
+    &.inverted {
         background-color: white;
         color: black;
         border: 0.1em solid black;
 
-        &:hover{
+        &:hover {
             color: white;
             background-color: black;
             border: none;

@@ -1,11 +1,19 @@
-.collection-item{
+@use "sass:math";
+
+.collection-item {
+    //variables
+    $margin-left: 30px;
+
     display: flex;
     flex-direction: column;
     height: 350px;
-    width: 22vw;
+    width: calc(25% - #{$margin-left});
     align-items: center;
+    margin-left: $margin-left;
+    border-radius: 50px;
+    margin-bottom: $margin-left;
 
-    .image{
+    .image {
         height: 95%;
         width: 100%;
         background-size: cover;
@@ -15,7 +23,7 @@
         justify-content: center;
         position: relative;
 
-        .custom-button{
+        .custom-button {
             width: 80%;
             position: absolute;
             bottom: 1.5em;
@@ -23,7 +31,7 @@
         }
     }
 
-    .collection-footer{
+    .collection-footer {
         height: 5%;
         width: 100%;
         display: flex;
@@ -31,22 +39,24 @@
         align-items: center;
         font-size: 1.8em;
 
-        .name{
+        .name {
             width: 90%;
         }
-        .price{
+        .price {
             width: 10%;
         }
     }
 
-    &:hover{
-        .image{
+    &:hover {
+        .image {
             opacity: 0.8;
+            transition: ease-in-out 0.3s;
         }
 
-        .custom-button{
+        .custom-button {
             display: flex;
             opacity: 0.85;
+            transition: ease-in-out 0.3s;
         }
     }
 }
